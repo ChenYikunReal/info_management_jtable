@@ -9,5 +9,6 @@
         <module name="info_management_jtable" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel target="8" />
   </component>
 </project>

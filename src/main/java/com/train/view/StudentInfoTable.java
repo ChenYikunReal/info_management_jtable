@@ -1,47 +1,43 @@
 package com.train.view;
 
+import com.train.controller.StudentInfoController;
+
 import java.awt.*;
 import javax.swing.*;
 import java.awt.event.*;
 import javax.swing.border.EmptyBorder;
 
-public class Table extends JFrame {
+public class StudentInfoTable extends JFrame {
 
 	private static final long serialVersionUID = 1L;
 
-    /**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					new Table();
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
+	private StudentInfoController controller = StudentInfoController.getController();
+
+	// 定义二维数据作为列表内容
+    private Object[][] tableInfo;
+
+    // 定义一维数据作为列标题
+    private static Object[] columnTitle = {"学生ID", "学生姓名", "学生年龄", "学生生日", "学生Email", "学生家庭住址"};
 
 	/**
 	 * Create the frame.
 	 */
-	public Table() {
+	public StudentInfoTable() {
 		setTitle("学生信息首页");
 		setVisible(true);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 1201, 664);
+        setBounds(100, 100, 1266, 725);
         JPanel contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
 		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(129, 98, 897, 481);
+        scrollPane.setBounds(59, 98, 1124, 534);
 		contentPane.add(scrollPane);
 
-        JTable table = new JTable();
+        Object[][] tableData = controller.getAllStudentInfo();
+        JTable table = new JTable(tableData , columnTitle);
 		scrollPane.setViewportView(table);
 		
 		JButton button_refresh = new JButton("刷新");
@@ -50,8 +46,8 @@ public class Table extends JFrame {
 			public void mouseClicked(MouseEvent e) {
 			}
 		});
-		button_refresh.setBounds(129, 30, 153, 39);
-		button_refresh.setIcon(new ImageIcon(Table.class.getResource("/images/refresh.png")));
+        button_refresh.setBounds(59, 30, 153, 39);
+		button_refresh.setIcon(new ImageIcon(StudentInfoTable.class.getResource("/images/refresh.png")));
 		button_refresh.setFont(new Font("楷体", Font.BOLD, 25));
 		contentPane.add(button_refresh);
 		
@@ -61,8 +57,8 @@ public class Table extends JFrame {
 			public void mouseClicked(MouseEvent e) {
 			}
 		});
-		button_lock.setBounds(498, 30, 153, 39);
-		button_lock.setIcon(new ImageIcon(Table.class.getResource("/images/lock.png")));
+        button_lock.setBounds(285, 30, 153, 39);
+		button_lock.setIcon(new ImageIcon(StudentInfoTable.class.getResource("/images/lock.png")));
 		button_lock.setFont(new Font("楷体", Font.BOLD, 25));
 		contentPane.add(button_lock);
 		
@@ -72,8 +68,8 @@ public class Table extends JFrame {
 			public void mouseClicked(MouseEvent e) {
 			}
 		});
-		button_unlock.setBounds(873, 30, 153, 39);
-		button_unlock.setIcon(new ImageIcon(Table.class.getResource("/images/unlock.png")));
+        button_unlock.setBounds(505, 30, 153, 39);
+		button_unlock.setIcon(new ImageIcon(StudentInfoTable.class.getResource("/images/unlock.png")));
 		button_unlock.setFont(new Font("楷体", Font.BOLD, 25));
 		contentPane.add(button_unlock);
 	}

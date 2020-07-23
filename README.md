@@ -14,6 +14,7 @@
 - pojo 实体类
 - service 业务逻辑接口
   - impl 业务逻辑实现类
+- controller 前端控制器
 - view 前端GUI实现
 
 ## JTable的一些基本信息

@@ -6,6 +6,7 @@ import java.awt.*;
 import javax.swing.*;
 import java.awt.event.*;
 import javax.swing.border.EmptyBorder;
+import javax.swing.table.DefaultTableModel;
 
 public class StudentInfoTable extends JFrame {
 
@@ -36,14 +37,18 @@ public class StudentInfoTable extends JFrame {
         scrollPane.setBounds(59, 98, 1124, 534);
 		contentPane.add(scrollPane);
 
-        Object[][] tableData = controller.getAllStudentInfo();
-        JTable table = new JTable(tableData , columnTitle);
+        tableInfo = controller.getAllStudentInfo();
+        DefaultTableModel model = new DefaultTableModel(tableInfo, columnTitle);
+        JTable table = new JTable(model);
 		scrollPane.setViewportView(table);
 		
 		JButton button_refresh = new JButton("刷新");
 		button_refresh.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
+                tableInfo = controller.getAllStudentInfo();
+                // 充分利用Swing的MVC模式
+                model.setDataVector(tableInfo, columnTitle);
 			}
 		});
         button_refresh.setBounds(59, 30, 153, 39);
@@ -55,6 +60,8 @@ public class StudentInfoTable extends JFrame {
 		button_lock.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
+			    // 设置表格内容不可编辑
+                table.setEnabled(false);
 			}
 		});
         button_lock.setBounds(285, 30, 153, 39);
@@ -66,6 +73,8 @@ public class StudentInfoTable extends JFrame {
 		button_unlock.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
+                // 设置表格内容可编辑
+			    table.setEnabled(true);
 			}
 		});
         button_unlock.setBounds(505, 30, 153, 39);

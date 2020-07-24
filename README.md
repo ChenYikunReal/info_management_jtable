@@ -27,6 +27,11 @@
 - [在MyBatis中写SQL语句的一些体会](https://www.bbsmax.com/A/QV5Z88aVzy/)
 - [MyBatis中文文档](https://mybatis.org/mybatis-3/zh/index.html)
 - [mybatis-generator的generatorConfig.xml配置详解](https://www.cnblogs.com/f-society/p/11402847.html)
+- MySQL高版本的话在写URL时需要加上TimeZone，靠&连接；可惜在配置文件中不允许用&，应该用&amp;来替换！<br/>
+报错内容就是：<code>The server time zone value '�й���׼ʱ��' is unrecognized or represents more than one time zone.</code>
 
 ## 图片来源
 - [Iconfont-阿里云官网Logo](https://www.iconfont.cn/collections/detail?spm=a313x.7781069.1998910419.de12df413&cid=16472)
+
+## 更新日志
+- 2020-07-24 将JDBC升级为MyBatis

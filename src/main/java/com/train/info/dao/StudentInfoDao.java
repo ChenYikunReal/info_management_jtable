@@ -1,6 +1,6 @@
-package com.train.dao;
+package com.train.info.dao;
 
-import com.train.pojo.StudentInfo;
+import com.train.info.pojo.StudentInfo;
 
 import java.sql.*;
 import java.util.ArrayList;

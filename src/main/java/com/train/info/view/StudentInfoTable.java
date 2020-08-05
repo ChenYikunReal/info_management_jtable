@@ -1,6 +1,6 @@
-package com.train.view;
+package com.train.info.view;
 
-import com.train.controller.StudentInfoController;
+import com.train.info.controller.StudentInfoController;
 
 import java.awt.*;
 import javax.swing.*;

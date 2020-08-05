@@ -1,10 +1,10 @@
-package com.train.service.impl;
+package com.train.info.service.impl;
 
-import com.train.dao.StudentInfoDao;
-import com.train.dao.StudentInfoMapper;
-import com.train.pojo.StudentInfo;
-import com.train.pojo.StudentInfoExample;
-import com.train.service.StudentInfoManagement;
+import com.train.info.dao.StudentInfoDao;
+import com.train.info.dao.StudentInfoMapper;
+import com.train.info.pojo.StudentInfo;
+import com.train.info.pojo.StudentInfoExample;
+import com.train.info.service.StudentInfoManagement;
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;

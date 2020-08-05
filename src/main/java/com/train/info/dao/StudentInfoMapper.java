@@ -1,7 +1,7 @@
-package com.train.dao;
+package com.train.info.dao;
 
-import com.train.pojo.StudentInfo;
-import com.train.pojo.StudentInfoExample;
+import com.train.info.pojo.StudentInfo;
+import com.train.info.pojo.StudentInfoExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 

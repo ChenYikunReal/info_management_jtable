@@ -1,6 +1,6 @@
-package com.train.service;
+package com.train.info.service;
 
-import com.train.pojo.StudentInfo;
+import com.train.info.pojo.StudentInfo;
 
 import java.util.List;
 

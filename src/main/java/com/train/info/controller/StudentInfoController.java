@@ -1,8 +1,8 @@
-package com.train.controller;
+package com.train.info.controller;
 
-import com.train.pojo.StudentInfo;
-import com.train.service.StudentInfoManagement;
-import com.train.service.impl.StudentInfoManagementImpl;
+import com.train.info.pojo.StudentInfo;
+import com.train.info.service.StudentInfoManagement;
+import com.train.info.service.impl.StudentInfoManagementImpl;
 
 import java.util.List;
 

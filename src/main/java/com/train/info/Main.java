@@ -1,6 +1,6 @@
-package com.train;
+package com.train.info;
 
-import com.train.view.StudentInfoTable;
+import com.train.info.view.StudentInfoTable;
 
 import java.awt.*;
 
